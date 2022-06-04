@@ -50,18 +50,16 @@ public class BasicItemController {
         item.setQuantity(quantity);
 
         itemRepository.save(item);
-
         model.addAttribute("item", item);
 
         return "basic/item";
     }
 
     @PostMapping("/add")
-    public String addItemV2(@ModelAttribute("item") Item item, Model model
+    public String addItemV2(@ModelAttribute("item") Item item
     ) {
         itemRepository.save(item);
-
-        model.addAttribute("item", item);
+//        model.addAttribute("item", item); // 자동으로 추가해줌
 
         return "basic/item";
     }
